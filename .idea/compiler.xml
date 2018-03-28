@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="kankan-analysis" />
+        <module name="kankan-common-service-facade" />
+        <module name="kankan-controller" />
+        <module name="kankan-product" />
+        <module name="kankan-redis" />
+        <module name="kankan-resource" />
+        <module name="kankan-user" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kankan" target="1.8" />
+      <module name="kankan-analysis" target="1.8" />
+      <module name="kankan-common-service-facade" target="1.8" />
+      <module name="kankan-controller" target="1.8" />
+      <module name="kankan-product" target="1.8" />
+      <module name="kankan-redis" target="1.8" />
+      <module name="kankan-resource" target="1.8" />
+      <module name="kankan-user" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

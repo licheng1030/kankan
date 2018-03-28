@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kankan-redis:war">
+    <output-path>$PROJECT_DIR$/../kankan/kankan-redis/target</output-path>
+    <root id="archive" name="kankan-redis-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="kankan-redis:war exploded" />
+    </root>
+  </artifact>
+</component>

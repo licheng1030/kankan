@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kankan-controller:war">
+    <output-path>$PROJECT_DIR$/../kankan/kankan-controller/target</output-path>
+    <root id="archive" name="kankan-controller-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="kankan-controller:war exploded" />
+    </root>
+  </artifact>
+</component>
