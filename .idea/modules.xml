@@ -3,12 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/kankan.iml" filepath="$PROJECT_DIR$/kankan.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../kankan/kankan-analysis/kankan-analysis.iml" filepath="$PROJECT_DIR$/../kankan/kankan-analysis/kankan-analysis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../kankan/kankan-common-service-facade/kankan-common-service-facade.iml" filepath="$PROJECT_DIR$/../kankan/kankan-common-service-facade/kankan-common-service-facade.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../kankan/kankan-controller/kankan-controller.iml" filepath="$PROJECT_DIR$/../kankan/kankan-controller/kankan-controller.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../kankan/kankan-product/kankan-product.iml" filepath="$PROJECT_DIR$/../kankan/kankan-product/kankan-product.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../kankan/kankan-redis/kankan-redis.iml" filepath="$PROJECT_DIR$/../kankan/kankan-redis/kankan-redis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../kankan/kankan-user/kankan-user.iml" filepath="$PROJECT_DIR$/../kankan/kankan-user/kankan-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kankan-analysis/kankan-analysis.iml" filepath="$PROJECT_DIR$/kankan-analysis/kankan-analysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kankan-analysis/kankan-analysis.iml" filepath="$PROJECT_DIR$/kankan-analysis/kankan-analysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kankan-common-service-facade/kankan-common-service-facade.iml" filepath="$PROJECT_DIR$/kankan-common-service-facade/kankan-common-service-facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kankan-controller/kankan-controller.iml" filepath="$PROJECT_DIR$/kankan-controller/kankan-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kankan-product/kankan-product.iml" filepath="$PROJECT_DIR$/kankan-product/kankan-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kankan-redis/kankan-redis.iml" filepath="$PROJECT_DIR$/kankan-redis/kankan-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kankan-user/kankan-user.iml" filepath="$PROJECT_DIR$/kankan-user/kankan-user.iml" />
     </modules>
   </component>
 </project>
