@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+"-//mybatis.org//DTD MyBatis Generator Configuration
+1.0//EN"
+"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"
+>
+<generatorConfiguration>
+	<!-- 制定oracle的驱动包的路径 千万别放中文路径下 -->
+	<classPathEntry location="D:\repository_a\mysql\mysql-connector-java\5.1.31\mysql-connector-java-5.1.31.jar" />
+	
+	<!-- 配置数据源和生成的代码所存放的位置 -->
+	<context id="context1">
+		
+		<!-- 去除自动生成的注释 -->
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		
+		<!-- 链接数据库 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/bjsjs" 
+			userId="root"
+			password="QhdAir+1s" />
+		<!-- 处理 BigDecimal类型-->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+			
+		<!-- 所生成的实体类的位置默认资源包src -->
+		<javaModelGenerator targetPackage="com.coilabs.model.data"  targetProject="kankan-user" >
+			<property name="trimStrings" value="true" />
+			<!-- pojo继承的clss,没有要注释掉 -->
+			 <property name="rootClass" value="com.coilabs.model.BaseVO" />
+		</javaModelGenerator>
+		
+		<!-- 所生成的sqlMap的影射文件的位置 -->
+		<sqlMapGenerator targetPackage="com.coilabs.mapper.data"  targetProject="kankan-user\src\main\resources">
+		</sqlMapGenerator>
+		
+		<!-- 所生成的Mapper接口位置 -->
+		<javaClientGenerator targetPackage="com.coilabs.mapper.data" targetProject="kankan-user" type="XMLMAPPER">
+		<!-- mapper接口 继承的接口,没有要注释掉 -->
+		<!-- 	<property name="rootInterface" value="com.asptec.common.mapper.BaseMapper" /> -->
+		</javaClientGenerator> 
+		
+		<!-- 为哪些表生成代码 tableName:表名 schema:数据库名-->
+<!-- 	<table schema="qinhuangdao" tableName="ATTACH" >
+		</table> -->
+		<table schema="bjsjs" tableName="user_p" >
+		</table>
+	<!--	<table schema="bjsjs" tableName="SOC_DICTIONARY" >
+		</table>-->
+		<!-- <table schema="qinhuangdao" tableName="WARN_TREATMENT_FLOWS" >
+		</table>
+		<table schema="qinhuangdao" tableName="WARN_INFO_NOTICE" >
+		</table>
+		<table schema="qinhuangdao" tableName="WARN_INFO" >
+		</table> -->
+	
+			<!-- 	drop table if exists ATTACH;
+			
+			drop table if exists DEPT_P;
+			
+			drop table if exists MODULE_P;
+			
+			drop table if exists ROLE_MODULE_P;
+			
+			drop table if exists ROLE_P;
+			
+			drop table if exists ROLE_USER_P;
+			
+			drop table if exists USER_INFO_P;
+			
+			drop table if exists USER_P;
+			
+			drop table if exists WARN_INFO;
+			
+			drop table if exists WARN_INFO_NOTICE;
+			
+			drop table if exists WARN_TREATMENT_FLOWS;
+			
+			drop table if exists WARN_USER; -->
+		
+		<!-- <table schema="" tableName="column_comments"  enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+		</table> -->
+		
+	</context>
+</generatorConfiguration>
