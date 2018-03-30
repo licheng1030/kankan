@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.coilabs.mapper.data.UserPMapper" >
+  <resultMap id="BaseResultMap" type="com.coilabs.model.data.UserP" >
+    <id column="USER_ID" property="userId" jdbcType="INTEGER" />
+    <result column="DEPT_ID" property="deptId" jdbcType="INTEGER" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="INTEGER" />
+    <result column="LOGIN_TYPE" property="loginType" jdbcType="INTEGER" />
+    <result column="RESERVE1_U" property="reserve1U" jdbcType="VARCHAR" />
+    <result column="RESERVE2_U" property="reserve2U" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.coilabs.model.data.UserP" extends="BaseResultMap" >
+    <result column="USER_NAME" property="userName" jdbcType="VARBINARY" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    USER_ID, DEPT_ID, PASSWORD, STATE, LOGIN_TYPE, RESERVE1_U, RESERVE2_U
+  </sql>
+  <sql id="Blob_Column_List" >
+    USER_NAME
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.coilabs.model.data.UserPExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from user_p
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.coilabs.model.data.UserPExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user_p
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from user_p
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_p
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.coilabs.model.data.UserPExample" >
+    delete from user_p
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.coilabs.model.data.UserP" >
+    insert into user_p (USER_ID, DEPT_ID, PASSWORD, 
+      STATE, LOGIN_TYPE, RESERVE1_U, 
+      RESERVE2_U, USER_NAME)
+    values (#{userId,jdbcType=INTEGER}, #{deptId,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{loginType,jdbcType=INTEGER}, #{reserve1U,jdbcType=VARCHAR}, 
+      #{reserve2U,jdbcType=VARCHAR}, #{userName,jdbcType=VARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.coilabs.model.data.UserP" >
+    insert into user_p
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="deptId != null" >
+        DEPT_ID,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="loginType != null" >
+        LOGIN_TYPE,
+      </if>
+      <if test="reserve1U != null" >
+        RESERVE1_U,
+      </if>
+      <if test="reserve2U != null" >
+        RESERVE2_U,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null" >
+        #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="loginType != null" >
+        #{loginType,jdbcType=INTEGER},
+      </if>
+      <if test="reserve1U != null" >
+        #{reserve1U,jdbcType=VARCHAR},
+      </if>
+      <if test="reserve2U != null" >
+        #{reserve2U,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.coilabs.model.data.UserPExample" resultType="java.lang.Integer" >
+    select count(*) from user_p
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update user_p
+    <set >
+      <if test="record.userId != null" >
+        USER_ID = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.deptId != null" >
+        DEPT_ID = #{record.deptId,jdbcType=INTEGER},
+      </if>
+      <if test="record.password != null" >
+        PASSWORD = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null" >
+        STATE = #{record.state,jdbcType=INTEGER},
+      </if>
+      <if test="record.loginType != null" >
+        LOGIN_TYPE = #{record.loginType,jdbcType=INTEGER},
+      </if>
+      <if test="record.reserve1U != null" >
+        RESERVE1_U = #{record.reserve1U,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reserve2U != null" >
+        RESERVE2_U = #{record.reserve2U,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userName != null" >
+        USER_NAME = #{record.userName,jdbcType=VARBINARY},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update user_p
+    set USER_ID = #{record.userId,jdbcType=INTEGER},
+      DEPT_ID = #{record.deptId,jdbcType=INTEGER},
+      PASSWORD = #{record.password,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=INTEGER},
+      LOGIN_TYPE = #{record.loginType,jdbcType=INTEGER},
+      RESERVE1_U = #{record.reserve1U,jdbcType=VARCHAR},
+      RESERVE2_U = #{record.reserve2U,jdbcType=VARCHAR},
+      USER_NAME = #{record.userName,jdbcType=VARBINARY}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update user_p
+    set USER_ID = #{record.userId,jdbcType=INTEGER},
+      DEPT_ID = #{record.deptId,jdbcType=INTEGER},
+      PASSWORD = #{record.password,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=INTEGER},
+      LOGIN_TYPE = #{record.loginType,jdbcType=INTEGER},
+      RESERVE1_U = #{record.reserve1U,jdbcType=VARCHAR},
+      RESERVE2_U = #{record.reserve2U,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.coilabs.model.data.UserP" >
+    update user_p
+    <set >
+      <if test="deptId != null" >
+        DEPT_ID = #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="loginType != null" >
+        LOGIN_TYPE = #{loginType,jdbcType=INTEGER},
+      </if>
+      <if test="reserve1U != null" >
+        RESERVE1_U = #{reserve1U,jdbcType=VARCHAR},
+      </if>
+      <if test="reserve2U != null" >
+        RESERVE2_U = #{reserve2U,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        USER_NAME = #{userName,jdbcType=VARBINARY},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.coilabs.model.data.UserP" >
+    update user_p
+    set DEPT_ID = #{deptId,jdbcType=INTEGER},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=INTEGER},
+      LOGIN_TYPE = #{loginType,jdbcType=INTEGER},
+      RESERVE1_U = #{reserve1U,jdbcType=VARCHAR},
+      RESERVE2_U = #{reserve2U,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARBINARY}
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.coilabs.model.data.UserP" >
+    update user_p
+    set DEPT_ID = #{deptId,jdbcType=INTEGER},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=INTEGER},
+      LOGIN_TYPE = #{loginType,jdbcType=INTEGER},
+      RESERVE1_U = #{reserve1U,jdbcType=VARCHAR},
+      RESERVE2_U = #{reserve2U,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

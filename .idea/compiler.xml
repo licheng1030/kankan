@@ -16,16 +16,13 @@
         <module name="kankan-user" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="kankan" target="1.8" />
-      <module name="kankan-analysis" target="1.8" />
-      <module name="kankan-analysis (1) (com.coialbs)" target="1.8" />
+      <module name="kankan-analysis" target="1.5" />
       <module name="kankan-common-service-facade" target="1.8" />
-      <module name="kankan-controller" target="1.8" />
-      <module name="kankan-product" target="1.8" />
-      <module name="kankan-redis" target="1.8" />
-      <module name="kankan-resource" target="1.8" />
-      <module name="kankan-user" target="1.8" />
+      <module name="kankan-controller" target="1.5" />
+      <module name="kankan-redis" target="1.5" />
+      <module name="kankan-user" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

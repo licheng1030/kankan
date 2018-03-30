@@ -28,7 +28,7 @@
 		</javaTypeResolver>
 			
 		<!-- 所生成的实体类的位置默认资源包src -->
-		<javaModelGenerator targetPackage="com.coilabs.model.data"  targetProject="kankan-user" >
+		<javaModelGenerator targetPackage="com.coilabs.model.data"  targetProject="kankan-user\src\main\java" >
 			<property name="trimStrings" value="true" />
 			<!-- pojo继承的clss,没有要注释掉 -->
 			 <property name="rootClass" value="com.coilabs.model.BaseVO" />
@@ -39,7 +39,7 @@
 		</sqlMapGenerator>
 		
 		<!-- 所生成的Mapper接口位置 -->
-		<javaClientGenerator targetPackage="com.coilabs.mapper.data" targetProject="kankan-user" type="XMLMAPPER">
+		<javaClientGenerator targetPackage="com.coilabs.mapper.data" targetProject="kankan-user\src\main\java" type="XMLMAPPER">
 		<!-- mapper接口 继承的接口,没有要注释掉 -->
 		<!-- 	<property name="rootInterface" value="com.asptec.common.mapper.BaseMapper" /> -->
 		</javaClientGenerator> 
