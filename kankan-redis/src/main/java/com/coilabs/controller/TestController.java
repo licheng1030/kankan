@@ -17,7 +17,7 @@ public class TestController {
     @RequestMapping("/get")
     @Cacheable(value="user-key",key = "#key+#name")
     public List<User> getRedis(String key, String name) {
-        List<User> list=new ArrayList<>();
+        List<User> list=new ArrayList<User>();
         User modle=new User();
         modle.setId("get");
         modle.setName("get");
@@ -29,7 +29,7 @@ public class TestController {
     @RequestMapping("/set")
     @CachePut(value="user-key",key = "#key+#name")
     public List<User> setRedis(String key ,String name) {
-        List<User> list=new ArrayList<>();
+        List<User> list=new ArrayList<User>();
         User modle=new User();
         modle.setId("set");
       //  modle.setName("get");
