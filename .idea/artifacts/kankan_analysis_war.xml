@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="kankan-analysis:war">
-    <output-path>$PROJECT_DIR$/../kankan/kankan-analysis/target</output-path>
+    <output-path>$PROJECT_DIR$/kankan-analysis/target</output-path>
     <root id="archive" name="kankan-analysis-0.0.1-SNAPSHOT.war">
       <element id="artifact" artifact-name="kankan-analysis:war exploded" />
     </root>

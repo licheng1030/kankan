@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="kankan-user:war">
-    <output-path>$PROJECT_DIR$/kankan-user/target</output-path>
-    <root id="archive" name="kankan-user-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="kankan-user:war exploded" />
-    </root>
-  </artifact>
-</component>
