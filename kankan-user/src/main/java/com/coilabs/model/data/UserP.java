@@ -17,7 +17,7 @@ public class UserP extends BaseVO {
 
     private String reserve2U;
 
-    private byte[] userName;
+    private String userName;
 
     public Integer getUserId() {
         return userId;
@@ -75,11 +75,19 @@ public class UserP extends BaseVO {
         this.reserve2U = reserve2U == null ? null : reserve2U.trim();
     }
 
-    public byte[] getUserName() {
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    /*public byte[] getUserName() {
         return userName;
     }
 
     public void setUserName(byte[] userName) {
         this.userName = userName;
-    }
+    }*/
 }

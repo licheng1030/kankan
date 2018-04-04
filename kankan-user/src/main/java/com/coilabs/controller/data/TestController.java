@@ -20,4 +20,14 @@ public List<UserP> getUserList(){
     return dataService.getUsers();
 }
 
+    @RequestMapping("add")
+    public int  setUser(){
+        return dataService.addUser();
+    }
+
+    @RequestMapping("add1")
+    public int setUser1(){
+        return dataService.addUserT();
+    }
+
 }

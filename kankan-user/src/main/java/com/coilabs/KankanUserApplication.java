@@ -5,7 +5,7 @@ package com.coilabs;
 		import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-//@MapperScan("com.coilabs.mapper")
+@MapperScan("com.coilabs.mapper")
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 public class KankanUserApplication {
 
