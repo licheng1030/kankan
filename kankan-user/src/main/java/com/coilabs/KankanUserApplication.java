@@ -12,4 +12,5 @@ public class KankanUserApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(KankanUserApplication.class, args);
 	}
+	///test
 }
