@@ -12,7 +12,7 @@
 	<description>controller</description>
 
 	<parent>
-		<groupId>com.coialbs</groupId>
+		<groupId>com.coilabs</groupId>
 		<artifactId>kankan</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
